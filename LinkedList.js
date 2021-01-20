@@ -38,11 +38,12 @@ class LinkedList {
 	}
 
 	size() {
-		let counter = 1
+		let counter = 0
+		let node = this.head
 
-		while(this.head.pointer) {
-			this.head.pointer = this.head.pointer.pointer
+		while(node) {
 			counter++
+			node = node.pointer
 		}
 
 		return counter
