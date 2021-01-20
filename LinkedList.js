@@ -14,7 +14,7 @@ class Node {
 // linkedList
 class LinkedList {
 
-	size = 0
+	#size = 0
 
 	constructor() {
 		this.head = null
@@ -32,27 +32,18 @@ class LinkedList {
 			let tail = this.head
 			
 			while(tail.pointer) {
-
 				tail = tail.pointer
 			}
 
 			tail.pointer = node
 		}
 		
-		this.size++
+		this.#size++
 	}
 
 
-	size() {
-		let counter = 0
-		let node = this.head
-
-		while(node) {
-			counter++
-			node = node.pointer
-		}
-
-		return counter
+	get size() {
+		return this.#size
 	}
 
 
